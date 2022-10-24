@@ -14,7 +14,7 @@ oppervlak = 1.13*10**-3
 
 #* berekende extra constanten
 Vmax = np.sqrt((1.01325*10**5)/1.293)
-λ = massa/(dichtheidLucht*oppervlak) #! BORKT
+λ = massa/(dichtheidLucht*oppervlak) 
 print(λ)
 
 for x in np.arange(xMin, xMax, xDelta):
