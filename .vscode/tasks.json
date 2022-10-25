@@ -6,13 +6,13 @@
         {
             "label": "arduino compile",
             "type": "shell",
-            "command": "arduino-cli.exe compile --fqbn arduino:avr:uno ${fileBasename}",
+            "command": "arduino-cli.exe compile --fqbn arduino:avr:uno ${file}",
             "problemMatcher": []
         },
         {
             "label": "arduino upload",
             "type": "shell",
-            "command": "arduino-cli.exe upload -p COM4 --fqbn arduino:avr:uno ${fileBasename}",
+            "command": "arduino-cli.exe upload -p COM4 --fqbn arduino:avr:uno ${file}",
             "problemMatcher": []
     ]
 }
