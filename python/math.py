@@ -4,7 +4,7 @@ result = []
 # Vars to edit points
 xMin = 0
 xMax = 3.5
-xDelta = 0.25
+xDelta = 0.125
 
 # constants for math
 massa = 2.045*10**-3
