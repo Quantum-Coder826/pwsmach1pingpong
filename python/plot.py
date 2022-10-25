@@ -16,13 +16,20 @@ oppervlak = 1.13*10**-3
 Vmax = np.sqrt((1.01325*10**5)/1.293)
 λ = massa/(dichtheidLucht*oppervlak) 
 
-x = np.arange(1,11) 
+x = np.arange(xMin,xMax,xDelta) 
 
 y1 = np.sqrt((2*luchtdruk*oppervlak*x)/massa)
 y2 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
+plt.plot(x, y1, color='b', label='0th order')
+plt.plot(x, y2, color='r', label='1st order')
+plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
+
+# stel as namen op
 plt.title("Modellen geluidsnelheid") 
 plt.xlabel("afstand (m)") 
 plt.ylabel("snelheid (m/s)") 
-plt.plot(x,y) 
+
+#stel legenda op en laat grafiek zien
+plt.legend()
 plt.show()
