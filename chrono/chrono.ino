@@ -1,10 +1,10 @@
 // alle standaart variabelen
-int lazer1 = 8;
-int lazer2 = 9;
-int ledPin = 13;
-float afstand = 0.30;
-float beginTijd;
-float eindTijd;
+const int lazer1 = 8;
+const int lazer2 = 9;
+const int ledPin = 13;
+const float afstand = 0.30;
+int beginTijd;
+int eindTijd;
 float tijd;
 float snelheid;
 
@@ -27,15 +27,14 @@ void loop() {
     while(digitalRead(lazer2) > 0) {continue;} // wacht tot de bal door de tweede lazerpoort gaat
     eindTijd = micros();
     digitalWrite(ledPin, HIGH);
-    beginTijd = beginTijd / 1000000; // ga van microseconden naar seconden
-    eindTijd = eindTijd / 1000000;
-    tijd = eindTijd - beginTijd; // krijg de tijd die nodig is om afstand af te leggen.
+    tijd = beginTijd - eindTijd; // krijg de tijd die nodig is om afstand af te leggen.
+    tijd = tijd / 1000000; // ga microseconden naar seconden
     
-    Serial.print("beginTijd:"); // print al de losse waarden met 8 decimalen
+    Serial.print("beginTijd (ms):"); // print al de losse waarden met 8 decimalen
     Serial.println(beginTijd, 8);
-    Serial.print("eindTijd:");
+    Serial.print("eindTijd (ms):");
     Serial.println(eindTijd, 8);
-    Serial.print("deltaTijd:");
+    Serial.print("deltaTijd (s):");
     Serial.println(tijd, 8);
 
     Serial.println(); // lege regel printen
