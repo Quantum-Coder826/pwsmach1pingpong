@@ -1,7 +1,9 @@
+// variablen voor I/O
 #define startPoort 9
 #define stopPoort 8
 #define led 13
 
+// variablen/constantes voor rekenen
 const float afstand = 0.225;
 int startTijd;
 int eindTijd;
@@ -51,19 +53,3 @@ void setup() {
 void loop() {
   // loop tot reset
 }
-    
-//     Serial.print("beginTijd (ms):"); // print al de losse waarden met 8 decimalen
-//     Serial.println(beginTijd, 8);
-//     Serial.print("eindTijd (ms):");
-//     Serial.println(eindTijd, 8);
-//     Serial.print("deltaTijd (s):");
-//     Serial.println(tijd, 8);
-
-//     Serial.println(); // lege regel printen
-//     snelheid = afstand / tijd; // bereken snelheid
-//     Serial.print("v="); // print snelheid met 8 decimalen
-//     Serial.print(snelheid, 8);
-
-//     while(true) {continue;} // loop voor altijd
-//   }
-// }
