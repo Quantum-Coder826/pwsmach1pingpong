@@ -7,7 +7,7 @@ xMax = 3.5
 xDelta = 0.125
 
 # constants for math
-massa = 45.93*10**-3
+massa = 2.045*10**-3
 luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 oppervlak = 0.04267
