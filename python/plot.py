@@ -17,7 +17,7 @@ dichtheidLucht = 1.293
 # pinpongbal met tape massa 13.41*10**-3; oppervlak = 1.13*10**-3
 
 # vars for math
-massa = 48.4*10**-3 # pingpongbal
+massa = 13.41*10**-3 # pingpongbal
 oppervlak = 1.13*10**-3 # pingpongbal
 
 # berekende extra constanten
@@ -36,7 +36,7 @@ plt.plot(x, y2, color='b', label='1st order', marker = 'o')
 
 # extra lijnen voor duidelijkheid
 plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
-plt.axhline(Vmax, color='m', linestyle='--', label='Vmax: ' + str(round(Vmax, 2)))
+plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
 plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(16,5))
 
 # code om bij elk punt x en y waarde te zetten
@@ -50,7 +50,7 @@ for i in range(len(x)):
     if x[i] == 1.0:
         print("snelheid na 1,0 meter: " + str(round(y2[i], 8)))
 
-plt.title("golfbal") 
+plt.title("pinpongbal met tape") 
 plt.xlabel("loop lengte (m)") 
 plt.ylabel("mondings snelheid (m/s)") 
 plt.grid(color='gray', linestyle='--', linewidth=1)
