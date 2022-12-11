@@ -25,11 +25,12 @@ y1 = np.sqrt((2*luchtdruk*oppervlak*x)/massa)
 y2 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
 # plot de formules
-plt.plot(x, y1, color='b', label='0th order', marker = 'o')
-plt.plot(x, y2, color='r', label='1st order', marker = 'o')
+plt.plot(x, y1, color='r', label='0th order', marker = 'o')
+plt.plot(x, y2, color='b', label='1st order', marker = 'o')
 
 # extra lijnen voor duidelijkheid
 plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
+#plt.axhline(Vmax, color='m', linestyle='--', label='Vmax: ' + str(round(Vmax, 2)))
 
 # code om bij elk punt x en y waarde te zetten
 #for i in range(len(x)): # add values to points
@@ -44,4 +45,3 @@ plt.grid(color='gray', linestyle='--', linewidth=1)
 #stel legenda op en laat grafiek zien
 plt.legend()
 plt.show()
-
