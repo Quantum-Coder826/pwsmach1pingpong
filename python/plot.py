@@ -55,6 +55,9 @@ plt.xlabel("loop lengte (m)")
 plt.ylabel("mondings snelheid (m/s)") 
 plt.grid(color='gray', linestyle='--', linewidth=1)
 
+plt.savefig('fig_1.png', bbox_inches='tight') # save het grafiek als een .png
+
 #stel legenda op en laat grafiek zien
 plt.legend()
 plt.show()
+
