@@ -17,7 +17,7 @@ dichtheidLucht = 1.293
 # pinpongbal met tape massa 13.41*10**-3; oppervlak = 1.13*10**-3
 
 # vars for math
-massa = 45.49*10**-3 # pingpongbal
+massa = 48.4*10**-3 # pingpongbal
 oppervlak = 1.13*10**-3 # pingpongbal
 
 # berekende extra constanten
@@ -55,9 +55,6 @@ plt.xlabel("loop lengte (m)")
 plt.ylabel("mondings snelheid (m/s)") 
 plt.grid(color='gray', linestyle='--', linewidth=1)
 
-plt.savefig('fig_1.png', bbox_inches='tight') # save het grafiek als een .png
-
 #stel legenda op en laat grafiek zien
 plt.legend()
 plt.show()
-
