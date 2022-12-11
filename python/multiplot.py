@@ -10,12 +10,6 @@ xDelta = 0.125
 luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 
-# info:
-# pinpongbal massa = 2.045*10**-3; oppervlak = 1.13*10**-3
-# golfbal massa = 45.49*10**-3; oppervlak = 1.13*10**-3
-# golfbal met tape massa = 48.4*10**-3; oppervlak = 1.13*10**-3
-# pinpongbal met tape massa 13.41*10**-3; oppervlak = 1.13*10**-3
-
 # vars for math
 massa = 18.4*10**-3 # pingpongbal
 oppervlak = 1.13*10**-3 # pingpongbal
@@ -34,9 +28,13 @@ y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 # alle titels en subplots opstellen
 fig, (zonder, met) = plt.subplots(1,2)
 fig.suptitle("pingpongbal")
+zonder.set_title("pingpongbal")
+met.set_title("pingpongbal met tape")
 
 # plot de grafieken/formules
-plt.plot(x, y1, color='b', label='1st order', marker = 'o')
+zonder.plot(x, y1, color='b', label='1st order', marker = 'o')
+
+massa = 13.41*10**-3
 
 # extra lijnen voor duidelijkheid
 plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
