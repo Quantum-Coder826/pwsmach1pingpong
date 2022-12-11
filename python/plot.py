@@ -10,12 +10,6 @@ xDelta = 0.125
 luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 
-# info:
-# pinpongbal massa = 2.045*10**-3; oppervlak = 1.13*10**-3
-# golfbal massa = 45.49*10**-3; oppervlak = 1.13*10**-3
-# golfbal met tape massa = 48.4*10**-3; oppervlak = 1.13*10**-3
-# pinpongbal met tape massa 13.41*10**-3; oppervlak = 1.13*10**-3
-
 # vars for math
 massa = 18.4*10**-3 # pingpongbal
 oppervlak = 1.13*10**-3 # pingpongbal
@@ -42,7 +36,6 @@ plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset po
 # code om bij elk punt x en y waarde te zetten
 #for i in range(len(x)): # add values to points
 #    plt.annotate( "(" + str(x[i]) + ";" + str(round(y2[i],2)) + ")", xy=(x[i], y2[i]), textcoords='offset points', xytext=(0,5), ha='center')
-
 
 # print de snelheid na 1 meter uit
 for i in range(len(x)):
