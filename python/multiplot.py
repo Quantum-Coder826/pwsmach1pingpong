@@ -1,3 +1,9 @@
+# gemaakt door Berend Veldthuis
+# gebruikt voor PWS mach 1 ping pong bal
+# Dit script maakt een paar figuuren die de mondings snelheid tegen afstand bevat.
+# De waarden worden bekeken met een paar modellen gemaakt door Ayars en Buchholtz (2004)
+# Deze modellen berekenen de mondingssnelheid van een vacuüm kannon
+
 import numpy as np 
 from matplotlib import pyplot as plt
 

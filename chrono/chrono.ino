@@ -1,3 +1,8 @@
+// gemaakt door Berend Veldthuis
+// gebruikt voor PWS mach 1 ping pong bal
+// dit script maakt gebruik van een paar LDR's en de aruidno hardwair om de snelheid van een projectiel te berekenen
+// T.L.D.R het is een chronometer
+
 // variablen voor I/O
 #define startPoort 9
 #define stopPoort 8

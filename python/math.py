@@ -1,3 +1,8 @@
+# gemaakt door Berend Veldthuis
+# gebruikt voor PWS mach 1 ping pong bal
+# Dit script maakt een .csv bestand op bais van een aantal modellen door Ayars en Buchholtz 2004
+# Deze modellen berekenen de mondingssnelheid van een vacuüm kannon
+
 import numpy as np
 result = []
 
