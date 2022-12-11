@@ -31,29 +31,26 @@ y1 = np.sqrt((2*luchtdruk*oppervlak*x)/massa)
 y2 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
 # plot de formules
-#plt.plot(x, y1, color='r', label='0th order', marker = 'o')
+plt.plot(x, y1, color='r', label='0th order', marker = 'o')
 plt.plot(x, y2, color='b', label='1st order', marker = 'o')
 
 # extra lijnen voor duidelijkheid
 plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
 plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
-plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(16,5))
+plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(-15,5))
 
 # code om bij elk punt x en y waarde te zetten
 #for i in range(len(x)): # add values to points
 #    plt.annotate( "(" + str(x[i]) + ";" + str(round(y2[i],2)) + ")", xy=(x[i], y2[i]), textcoords='offset points', xytext=(0,5), ha='center')
 
-# zet namen op grafiek en assen + doe gridlines invoegen
 
 # print de snelheid na 1 meter uit
 for i in range(len(x)):
     if x[i] == 1.0:
         print("snelheid na 1,0 meter: " + str(round(y2[i], 8)))
-        plt.annotate("v=" + str(round(y2[i], 2)), xy=(x[i],y2[i]), 
-                    textcoords='offset points', xytext=(30,-15), ha='center',
-                    arrowprops=dict(arrowstyle="->")
-                    )
+        #plt.annotate("v=" + str(round(y2[i], 2)), xy=(x[i],y2[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
 
+# zet namen op grafiek en assen + doe gridlines invoegen
 plt.title("pinpongbal") 
 plt.xlabel("loop lengte (m)") 
 plt.ylabel("mondings snelheid (m/s)") 
