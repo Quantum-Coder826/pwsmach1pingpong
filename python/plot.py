@@ -6,11 +6,14 @@ xMin = 0
 xMax = 3.5
 xDelta = 0.125
 
-# constants for math
+# vars for math
 massa = 2.045*10**-3
+oppervlak = 0.04267
+
+# wereld constantes
 luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
-oppervlak = 0.04267
+
 
 # berekende extra constanten
 Vmax = np.sqrt((1.01325*10**5)/1.293)
