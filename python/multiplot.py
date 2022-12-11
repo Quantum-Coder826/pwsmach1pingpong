@@ -23,7 +23,7 @@ x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we
 # TODO: maak into dubble plots\
 plt.suptitle("pingpongbal")
 
-for i in range(1,2):
+for i in range(1,3):
     plt.subplot(1,2,i)
     if i == 1:
         plt.title("zonder tape")
