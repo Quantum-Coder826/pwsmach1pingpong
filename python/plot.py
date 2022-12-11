@@ -17,7 +17,7 @@ dichtheidLucht = 1.293
 # pinpongbal met tape massa 13.41*10**-3; oppervlak = 1.13*10**-3
 
 # vars for math
-massa = 13.41*10**-3 # pingpongbal
+massa = 2.045*10**-3 # pingpongbal
 oppervlak = 1.13*10**-3 # pingpongbal
 
 # berekende extra constanten
@@ -49,8 +49,12 @@ plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset po
 for i in range(len(x)):
     if x[i] == 1.0:
         print("snelheid na 1,0 meter: " + str(round(y2[i], 8)))
+        plt.annotate("v=" + str(round(y2[i], 2)), xy=(x[i],y2[i]), 
+                    textcoords='offset points', xytext=(30,-15), ha='center',
+                    arrowprops=dict(arrowstyle="->")
+                    )
 
-plt.title("pinpongbal met tape") 
+plt.title("pinpongbal") 
 plt.xlabel("loop lengte (m)") 
 plt.ylabel("mondings snelheid (m/s)") 
 plt.grid(color='gray', linestyle='--', linewidth=1)
