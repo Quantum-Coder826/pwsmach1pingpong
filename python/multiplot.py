@@ -41,7 +41,6 @@ for i in range(1,3):
 
     plt.plot(x, y, color='b', label='1st order', marker = 'o')
 
-    plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
     plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
     plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
 
