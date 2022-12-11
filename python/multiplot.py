@@ -54,4 +54,5 @@ for i in range(1,3):
     plt.grid(color='gray', linestyle='--', linewidth=1)
 
 #stel legenda op en laat grafiek zien
+plt.savefig("fig1.png")
 plt.show()
