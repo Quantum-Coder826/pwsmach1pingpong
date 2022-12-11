@@ -10,54 +10,48 @@ xDelta = 0.125
 luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 
-# vars for math, eerst waarden voor zonder tape; 2de waarden met tape
-massaList = [ 18.4*10**-3, 13.41*10**-3 ]
-oppervlakList = [ 1.13*10**-3, 1.13*10**-3 ]
+# waarden lijsten voor de plots
+massaList = [2.045*10**-3, 13.41*10**-3]
+oppList = [1.13*10**-3, 1.13*10**-3]
 
-# berekende extra constanten
-Vmax = np.sqrt((1.01325*10**5)/1.293)
+# vasr maken omdat het moet
+massa = 0
+oppervlak = 0
 
 x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we willen berekenen, de xMax + XDelta is zodat we wel de xMax halen
 
-# defineer de formules
-λ = 0
-y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
+# TODO: maak into dubble plots\
+plt.suptitle("pingpongbal")
 
-# TODO: maak into dubble plots
+for i in range(1,2):
+    plt.subplot(1,2,i)
+    if i == 1:
+        plt.title("zonder tape")
+    else:
+        plt.title("met tape")
 
-# alle titels en subplots opstellen
-fig, axs = plt.subplots(1,2, sharey=True)
-fig.suptitle("pingpongbal")
-axs[0].set_title("zonder tape")
-axs[1].set_title("met tape")
-axs[0].grid(color='gray', linestyle='--', linewidth=1)
-axs[1].grid(color='gray', linestyle='--', linewidth=1)
+    # waarden opstellen
+    massa = massaList[i - 1]
+    oppervlak = oppList[i - 1]
 
-
-for ax in range(len(axs)):
-    massa = massaList[ax]
-    oppervlak = oppervlakList[ax]
-
-    # bereken nodige constante
+    # bereken de zooi voor het plotten
+    Vmax = np.sqrt((1.01325*10**5)/1.293)
     λ = massa/(dichtheidLucht*oppervlak)
+    y = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
-    # plot de lijn
-    axs[ax].plot(x, y1, color='b', label='1st order', marker = 'o')
+    plt.plot(x, y, color='b', label='1st order', marker = 'o')
 
-    # extra lijnen voor duidelijkheid
-    axs[ax].axhline(343, color='k', linestyle='-', label='geluidssnelheid')
-    axs[ax].axhline(Vmax, color='m', linestyle='--', label='Vmax')
-    axs[ax].annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
+    plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
+    plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
+    plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
 
-    # print de snelheid na 1 meter uit en invoegen in grafiek
     for i in range(len(x)):
         if x[i] == 1.0:
-            print("snelheid na 1,0 meter: " + str(round(y1[i], 8)))
-            plt.annotate("v=" + str(round(y1[i], 2)), xy=(x[i],y1[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
-            break
+            print("snelheid na 1,0 meter: " + str(round(y[i], 8)))
+            plt.annotate("v=" + str(round(y[i], 2)), xy=(x[i],y[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
 
-
+    plt.legend()
+    plt.grid(color='gray', linestyle='--', linewidth=1)
 
 #stel legenda op en laat grafiek zien
-plt.legend()
 plt.show()
