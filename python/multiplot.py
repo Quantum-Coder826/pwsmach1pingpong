@@ -42,7 +42,7 @@ for i in range(1,3):
     plt.plot(x, y, color='b', label='1st order', marker = 'o')
 
     plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
-    plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
+    plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,2)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
 
     for i in range(len(x)):
         if x[i] == 1.0:
