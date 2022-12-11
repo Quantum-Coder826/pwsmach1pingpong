@@ -10,9 +10,9 @@ xDelta = 0.125
 luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 
-# vars for math
-massa = 18.4*10**-3 # pingpongbal
-oppervlak = 1.13*10**-3 # pingpongbal
+# vars for math, eerst waarden voor zonder tape; 2de waarden met tape
+massa = [ 18.4*10**-3, 13.41*10**-3 ]
+oppervlak = [ 1.13*10**-3, 1.13*10**-3 ]
 
 # berekende extra constanten
 Vmax = np.sqrt((1.01325*10**5)/1.293)
@@ -26,26 +26,29 @@ y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 # TODO: maak into dubble plots
 
 # alle titels en subplots opstellen
-fig, (zonder, met) = plt.subplots(1,2)
+fig, axs = plt.subplots(1,2, sharey=True)
 fig.suptitle("pingpongbal")
-zonder.set_title("pingpongbal")
-met.set_title("pingpongbal met tape")
+axs[0].set_title("zonder tape")
+axs[1].set_title("met tape")
+axs[0].grid(color='gray', linestyle='--', linewidth=1)
+axs[1].grid(color='gray', linestyle='--', linewidth=1)
 
-# plot de grafieken/formules
-zonder.plot(x, y1, color='b', label='1st order', marker = 'o')
 
-massa = 13.41*10**-3
+for ax in range(len(axs)):
+    # plot de grafieken/formules
+    plt.plot(x, y1, color='b', label='1st order', marker = 'o')
 
-# extra lijnen voor duidelijkheid
-plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
-plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
-plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
+    # extra lijnen voor duidelijkheid
+    plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
+    plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
+    plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
 
-# print de snelheid na 1 meter uit
-for i in range(len(x)):
-    if x[i] == 1.0:
-        print("snelheid na 1,0 meter: " + str(round(y1[i], 8)))
-        plt.annotate("v=" + str(round(y1[i], 2)), xy=(x[i],y1[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
+    # print de snelheid na 1 meter uit
+    for i in range(len(x)):
+        if x[i] == 1.0:
+            print("snelheid na 1,0 meter: " + str(round(y1[i], 8)))
+            plt.annotate("v=" + str(round(y1[i], 2)), xy=(x[i],y1[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
+            break
 
 
 
