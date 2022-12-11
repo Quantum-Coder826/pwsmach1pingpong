@@ -22,7 +22,7 @@ oppervlak = 0
 x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we willen berekenen, de xMax + XDelta is zodat we wel de xMax halen
 
 # TODO: maak into dubble plots\
-plt.suptitle("pingpongbal")
+plt.suptitle("golfbal")
 
 for i in range(1,3):
     plt.subplot(1,2,i)
@@ -50,7 +50,7 @@ for i in range(1,3):
             print("snelheid na 1,0 meter: " + str(round(y[i], 8)))
             plt.annotate("v=" + str(round(y[i], 2)), xy=(x[i],y[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
 
-    plt.legend()
+    plt.legend(loc=6)
     plt.grid(color='gray', linestyle='--', linewidth=1)
 
 #stel legenda op en laat grafiek zien
