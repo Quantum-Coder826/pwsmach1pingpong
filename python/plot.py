@@ -37,7 +37,8 @@ plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
 # stel as namen op
 plt.title("Modellen geluidsnelheid") 
 plt.xlabel("loop lengte (m)") 
-plt.ylabel("snelheid (m/s)") 
+plt.ylabel("mondings snelheid (m/s)") 
+plt.grid(color='gray', linestyle='--', linewidth=1)
 
 #stel legenda op en laat grafiek zien
 plt.legend()
