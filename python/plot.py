@@ -31,13 +31,13 @@ y1 = np.sqrt((2*luchtdruk*oppervlak*x)/massa)
 y2 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
 # plot de formules
-plt.plot(x, y1, color='r', label='0th order', marker = 'o')
+#plt.plot(x, y1, color='r', label='0th order', marker = 'o')
 plt.plot(x, y2, color='b', label='1st order', marker = 'o')
 
 # extra lijnen voor duidelijkheid
 plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
 plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
-plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(-15,5))
+plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(-15,5)) # zet anoation bij de Vmax lijn
 
 # code om bij elk punt x en y waarde te zetten
 #for i in range(len(x)): # add values to points
@@ -51,7 +51,7 @@ for i in range(len(x)):
         #plt.annotate("v=" + str(round(y2[i], 2)), xy=(x[i],y2[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
 
 # zet namen op grafiek en assen + doe gridlines invoegen
-plt.title("pinpongbal") 
+plt.title("modellen snelheid pinpongbal") 
 plt.xlabel("loop lengte (m)") 
 plt.ylabel("mondings snelheid (m/s)") 
 plt.grid(color='gray', linestyle='--', linewidth=1)
