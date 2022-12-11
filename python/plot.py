@@ -41,7 +41,7 @@ plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
 # print de snelheid na 1 meter uit
 for i in range(len(x)):
     if x[i] == 1.0:
-        print("snelheid na 1,0 meter: " + str(round(y2, 8)))
+        print("snelheid na 1,0 meter: " + str(round(y2[i], 8)))
 
 plt.title("Model snelheid pingpongbal") 
 plt.xlabel("loop lengte (m)") 
