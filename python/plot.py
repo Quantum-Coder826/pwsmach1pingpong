@@ -18,7 +18,7 @@ oppervlak = 1.13*10**-3 # pingpongbal
 Vmax = np.sqrt((1.01325*10**5)/1.293)
 λ = massa/(dichtheidLucht*oppervlak)
 
-x = np.arange(xMin,xMax,xDelta) #maak de lijst van x coordinaden die we willen berekenen
+x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we willen berekenen, de xMax + XDelta is zodat we wel de xMax halen
 
 # defineer de formules
 y1 = np.sqrt((2*luchtdruk*oppervlak*x)/massa)
@@ -37,7 +37,13 @@ plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
 #    plt.annotate( "(" + str(x[i]) + ";" + str(round(y2[i],2)) + ")", xy=(x[i], y2[i]), textcoords='offset points', xytext=(0,5), ha='center')
 
 # zet namen op grafiek en assen + doe gridlines invoegen
-plt.title("Modellen geluidsnelheid") 
+
+# print de snelheid na 1 meter uit
+for i in range(len(x)):
+    if x[i] == 1.0:
+        print("snelheid na 1,0 meter: " + str(round(y2, 8)))
+
+plt.title("Model snelheid pingpongbal") 
 plt.xlabel("loop lengte (m)") 
 plt.ylabel("mondings snelheid (m/s)") 
 plt.grid(color='gray', linestyle='--', linewidth=1)
