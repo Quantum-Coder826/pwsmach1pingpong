@@ -20,7 +20,7 @@ Vmax = np.sqrt((1.01325*10**5)/1.293)
 x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we willen berekenen, de xMax + XDelta is zodat we wel de xMax halen
 
 # defineer de formules
-λ = None
+λ = 0
 y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
 # TODO: maak into dubble plots
@@ -42,12 +42,12 @@ for ax in range(len(axs)):
     λ = massa/(dichtheidLucht*oppervlak)
 
     # plot de lijn
-    plt.plot(x, y1, color='b', label='1st order', marker = 'o')
+    axs[ax].plot(x, y1, color='b', label='1st order', marker = 'o')
 
     # extra lijnen voor duidelijkheid
-    plt.axhline(343, color='k', linestyle='-', label='geluidssnelheid')
-    plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
-    plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
+    axs[ax].axhline(343, color='k', linestyle='-', label='geluidssnelheid')
+    axs[ax].axhline(Vmax, color='m', linestyle='--', label='Vmax')
+    axs[ax].annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
 
     # print de snelheid na 1 meter uit en invoegen in grafiek
     for i in range(len(x)):
