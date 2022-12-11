@@ -29,6 +29,7 @@ x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we
 # defineer de formules
 y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
+# TODO: maak into dubble plots
 # plot de formules
 plt.plot(x, y1, color='b', label='1st order', marker = 'o')
 
