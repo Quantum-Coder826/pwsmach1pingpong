@@ -30,7 +30,12 @@ x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we
 y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
 # TODO: maak into dubble plots
-# plot de formules
+
+# alle titels en subplots opstellen
+fig, (zonder, met) = plt.subplots(1,2)
+fig.suptitle("pingpongbal")
+
+# plot de grafieken/formules
 plt.plot(x, y1, color='b', label='1st order', marker = 'o')
 
 # extra lijnen voor duidelijkheid
@@ -41,14 +46,10 @@ plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset po
 # print de snelheid na 1 meter uit
 for i in range(len(x)):
     if x[i] == 1.0:
-        print("snelheid na 1,0 meter: " + str(round(y2[i], 8)))
-        plt.annotate("v=" + str(round(y2[i], 2)), xy=(x[i],y2[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
+        print("snelheid na 1,0 meter: " + str(round(y1[i], 8)))
+        plt.annotate("v=" + str(round(y1[i], 2)), xy=(x[i],y1[i]), textcoords='offset points', xytext=(30,-15), ha='center',arrowprops=dict(arrowstyle="->"))
 
-# zet namen op grafiek en assen + doe gridlines invoegen
-plt.title("golfbal met tape") 
-plt.xlabel("loop lengte (m)") 
-plt.ylabel("mondings snelheid (m/s)") 
-plt.grid(color='gray', linestyle='--', linewidth=1)
+
 
 #stel legenda op en laat grafiek zien
 plt.legend()
