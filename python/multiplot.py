@@ -20,6 +20,7 @@ Vmax = np.sqrt((1.01325*10**5)/1.293)
 x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we willen berekenen, de xMax + XDelta is zodat we wel de xMax halen
 
 # defineer de formules
+λ = None
 y1 = Vmax*np.absolute(x/(x+λ)*(1+2*λ/x)**(1/2))
 
 # TODO: maak into dubble plots
