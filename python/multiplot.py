@@ -11,12 +11,11 @@ luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 
 # vars for math, eerst waarden voor zonder tape; 2de waarden met tape
-massa = [ 18.4*10**-3, 13.41*10**-3 ]
-oppervlak = [ 1.13*10**-3, 1.13*10**-3 ]
+massaList = [ 18.4*10**-3, 13.41*10**-3 ]
+oppervlakList = [ 1.13*10**-3, 1.13*10**-3 ]
 
 # berekende extra constanten
 Vmax = np.sqrt((1.01325*10**5)/1.293)
-λ = massa/(dichtheidLucht*oppervlak)
 
 x = np.arange(xMin,xMax + xDelta,xDelta) #maak de lijst van x coordinaden die we willen berekenen, de xMax + XDelta is zodat we wel de xMax halen
 
@@ -35,7 +34,13 @@ axs[1].grid(color='gray', linestyle='--', linewidth=1)
 
 
 for ax in range(len(axs)):
-    # plot de grafieken/formules
+    massa = massaList[ax]
+    oppervlak = oppervlakList[ax]
+
+    # bereken nodige constante
+    λ = massa/(dichtheidLucht*oppervlak)
+
+    # plot de lijn
     plt.plot(x, y1, color='b', label='1st order', marker = 'o')
 
     # extra lijnen voor duidelijkheid
@@ -43,7 +48,7 @@ for ax in range(len(axs)):
     plt.axhline(Vmax, color='m', linestyle='--', label='Vmax')
     plt.annotate("Vmax = " + str(round(Vmax, 2)), xy=(0,Vmax), textcoords='offset points', xytext=(0,5)) # zet anotation bij de Vmax lijn (-15 voor algemeene plot)
 
-    # print de snelheid na 1 meter uit
+    # print de snelheid na 1 meter uit en invoegen in grafiek
     for i in range(len(x)):
         if x[i] == 1.0:
             print("snelheid na 1,0 meter: " + str(round(y1[i], 8)))
