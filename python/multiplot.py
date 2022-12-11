@@ -11,7 +11,8 @@ luchtdruk = 1.01325*10**5
 dichtheidLucht = 1.293
 
 # waarden lijsten voor de plots
-massaList = [2.045*10**-3, 13.41*10**-3]
+massaList = [45.49*10**-3, 
+            48.4*10**-3]
 oppList = [1.13*10**-3, 1.13*10**-3]
 
 # vasr maken omdat het moet
